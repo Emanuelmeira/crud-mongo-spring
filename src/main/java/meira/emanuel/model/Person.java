@@ -10,11 +10,7 @@ import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer;
 import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer;
 import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateSerializer;
 import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateTimeSerializer;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import meira.emanuel.model.enums.Tag;
 import org.bson.types.ObjectId;
@@ -31,6 +27,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @Data
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @Document(collection = "person")
@@ -60,6 +57,7 @@ public class Person {
     private List<Tag> tags;
 
     @Data
+    @Builder
     @Embeddable
     @NoArgsConstructor
     @AllArgsConstructor
